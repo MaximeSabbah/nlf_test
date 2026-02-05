@@ -2,3 +2,4 @@
 *.torchscript
 *.onnx
 *.pt
+resultat_final.mp4
