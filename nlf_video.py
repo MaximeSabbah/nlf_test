@@ -40,7 +40,7 @@ def process_video(video_path, yolo_model_path, nlf_model_path, output_path="outp
     # nlf = torch.jit.load(nlf_model_path).eval().to(device)
     nlf = load_nlf_optimized(nlf_model_path, device)
 
-    cano_verts_full = np.load("canonical_verts/smplx.npy")
+    cano_verts_full = np.load("weights/canonical_verts/smplx.npy")
 
     world_up_vector=torch.tensor([0.0, -1.0, 0.0]).to(device)
 
@@ -183,8 +183,8 @@ def draw_projections(img_bgr, poses_3d, intrinsics):
 
 # --- LANCEMENT ---
 if __name__ == "__main__":
-    video_in = "data/StraightWalking/camera_0.mp4"
-    yolo_p = "yolo11m.pt"
+    video_in = "data/camera_0.mp4"
+    yolo_p = "weights/yolo/yolov10n.pt"
     nlf_p = "weights/nlf/nlf_s_multi_0.2.2.torchscript"
     
     process_video(video_in, yolo_p, nlf_p, "resultat_final.mp4")

@@ -1,5 +1,4 @@
-weights/
-canonical_verts/
 *.engine
 *.torchscript
 *.onnx
+*.pt
