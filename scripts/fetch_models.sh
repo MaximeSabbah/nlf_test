@@ -52,16 +52,6 @@ ASSET_L="nlf_l_multi_0.3.2.torchscript"
 download_release_asset "${NLF_OWNER}" "${NLF_REPO}" "${TAG_S}" "${ASSET_S}" "${NLF_DIR}/${ASSET_S}"
 download_release_asset "${NLF_OWNER}" "${NLF_REPO}" "${TAG_L}" "${ASSET_L}" "${NLF_DIR}/${ASSET_L}"
 
-# (Optional) canonical verts if they are in your release assets; uncomment if you want:
-mkdir -p weights/nlf/canonical_verts
-curl -L --retry 5 --retry-delay 2 \
-  -o weights/nlf/canonical_verts/smpl.npy \
-  https://raw.githubusercontent.com/isarandi/nlf-pipeline/main/canonical_verts/smpl.npy
-curl -L --retry 5 --retry-delay 2 \
-  -o weights/nlf/canonical_verts/smplx.npy \
-  https://raw.githubusercontent.com/isarandi/nlf-pipeline/main/canonical_verts/smplx.npy
-
-
 # -------- YOLOv10n weights download --------
 # YOLOv10 pretrained weights are in THU-MIG/yolov10 release v1.1: yolov10n.pt :contentReference[oaicite:2]{index=2}
 YOLO_OWNER="THU-MIG"
